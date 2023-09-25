@@ -1,0 +1,49 @@
+print("Calculadora básica realizada en Python")
+
+while True:
+    try:
+        numero1 = float(input("Ingrese el primer valor: "))
+        numero2 = float(input("Ingrese el segundo valor: "))
+        break  # Salir del bucle si se ingresan números válidos
+    except ValueError:
+        print("Entrada no válida. Ingrese números válidos.")
+
+while True:
+    print("Operaciones disponibles:")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Producto")
+    print("4. División")
+    print("5. Residuo")
+    print("6. Salir")
+
+    opcion = input("Elija una operación (1/2/3/4/5/6): ")
+
+    if opcion == '1':
+        resultado = numero1 + numero2
+        print("La suma de los valores es:", resultado)
+    elif opcion == '2':
+        resultado = numero1 - numero2
+        print("La resta de los valores es:", resultado)
+    elif opcion == '3':
+        resultado = numero1 * numero2
+        print("El producto de los valores es:", resultado)
+    elif opcion == '4':
+        if numero2 != 0:
+            resultado = numero1 / numero2
+            print("La división de los valores es:", resultado)
+        else:
+            print("No se puede dividir entre cero.")
+    elif opcion == '5':
+        resultado = numero1 % numero2
+        print("El residuo de la división es:", resultado)
+    elif opcion == '6':
+        print("¿Desea continuar o cerrar definitivamente la calculadora?")
+        continuar = input("Elija 'continuar' para seguir calculando o 'cerrar' para salir definitivamente: ").lower()
+        if continuar == 'cerrar':
+            print("Saliendo de la calculadora.")
+            break  # Salir del bucle si se elige "cerrar"
+        elif continuar != 'continuar':
+            print("Opción no válida. Continuando calculadora.")
+    else:
+        print("Opción no válida. Por favor, elija una operación válida (1/2/3/4/5/6).")
